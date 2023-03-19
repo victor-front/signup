@@ -14,3 +14,79 @@ body{
 	background-color: #222;
 	font-family: Arial, Helvetica, Verdana, sans-serif;
 }
+
+section#criar{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #ddd;
+	color: #222;
+	padding: 15px;
+	border-radius: 10px;
+	box-shadow: 2px 2px 2px #010101;
+}
+
+section#criar h1{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-size: 2em;
+	margin: auto;
+	width: 100%;
+	font-weight: bold;
+}
+
+.etp h2{
+	font-size: 1.2em;
+	margin-bottom: 5px;
+}
+
+.etp{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-top: 2px solid #222;
+	width: 100%;
+	padding-top: 5px;
+	margin-top: 5px;
+}
+
+input.entr{
+	width: 80%;
+	padding: 10px;
+	border: none;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-radius: 20px;
+	background-color: #222;
+	color: #ddd;
+	font-size: .9em;
+	box-shadow: 2px 2px 1px #888;
+}
+
+input.entr:focus{
+	outline: none;
+}
+
+input#enviar{
+	margin-top: 10px;
+	padding: 5px;
+	font-size: .9em;
+	font-weight: bold;
+	border: none;
+	background-color: #222;
+	color: #ccc;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-radius: 20px;
+	box-shadow: 2px 2px 1px #888;
+}
+
+input#enviar:hover{
+	background-color: #333;
+	cursor: pointer;
+}
