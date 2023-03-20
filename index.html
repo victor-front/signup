@@ -8,7 +8,7 @@
 		<script defer src="data/index.js"></script>
 		<title>Sign Up</title>
 	</head>
-	<body onload="load()">
+	<body>
 		<section id="criar">
 			<h1>Crie sua conta aqui!</h1>
 			<div class="etp">
@@ -18,6 +18,13 @@
 			<div class="etp">
 				<h2>Digite sua descrição(opicional)</h2>
 				<input class="entr" id="desc" name="desc" placeholder="Minha descrição é...">
+			</div>
+			<div class="etp">
+				<div id="img-container">
+					<img id="imagem" style="width: 100%; height: 100%; border-radius: 50%; display: none;">
+					<input type="file" id="fileImg" style="display: none;">
+					<span id="icone-001">?</span>
+				</div>
 			</div>
 			<input type="button" value="Enviar" id="enviar">
 		</section>

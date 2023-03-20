@@ -90,3 +90,30 @@ input#enviar:hover{
 	background-color: #333;
 	cursor: pointer;
 }
+
+#img-container{
+	position: relative;
+	overflow: ridden;
+	cursor: pointer;
+	text-shadow: 2px 2px 1px #888;
+	width: 100px;
+	height: 100px;
+	border: 3px solid #222;
+	box-shadow: 2px 2px 1px #888;
+	border-radius: 50%;
+	transition: 500ms;
+}
+
+#img-container:hover{
+	background-color: #ccc;
+	color: #333;
+	border: 3px solid #333;
+}
+
+#icone-001{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 4em;
+}
