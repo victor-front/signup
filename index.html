@@ -8,8 +8,8 @@
 		<script defer src="data/index.js"></script>
 		<title>Sign Up</title>
 	</head>
-	<body>
-		<section id="criar">
+	<body onload="comparar()">
+		<section style="display: none;" id="criar">
 			<h1>Crie sua conta aqui!</h1>
 			<div class="etp">
 				<h2>Digite seu Nick</h2>
@@ -29,7 +29,7 @@
 			</div>
 			<div class="etp">
 				<h2>Cor de fundo(opicional)</h2>
-				<input type="color" name="color" id="color">
+				<input type="color" value="#CC3838" name="color" id="color">
 			</div>
 			<input type="button" value="Enviar" id="enviar">
 		</section>

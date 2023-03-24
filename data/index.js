@@ -3,6 +3,15 @@ let file = document.getElementById('fileImg');
 let imagem = document.getElementById('imagem');
 let enviar = document.getElementById('enviar');
 
+function comparar(){//se o cadiado for true, quer dizer que a conta já foi criada
+	if(localStorage.getItem('lcade') == 'true'){
+		document.body.innerHTML = `<p style="color: #ddd;">${localStorage.getItem('lnick')}</p>`;
+	}else{
+		document.getElementById('criar').style.display = 'flex';
+		//se não for true, então o site prosseguirá normalmente
+	}
+}
+
 enviar.addEventListener('click', ()=>{ //chamar a função de verificação quando o botão for clicado
 	verificar();
 });
@@ -14,7 +23,7 @@ container.addEventListener('click', ()=>{ //quando container de imagem for clica
 container.addEventListener('change', (e)=>{ //sistema de escolher a foto de perfil
 	if (file.files.length <= 0){return;};
 	let = reader = new FileReader();
-	
+		
 	reader.onload = () =>{//dar display à pfp(foto de perfil)
 		document.getElementById('icone-001').style.display = 'none';
 		imagem.src = reader.result;
@@ -38,5 +47,6 @@ function verificar(){//sistema de verificação e validação
 		localStorage.setItem('ldesc', desc);
 		localStorage.setItem('lpfp', pfp);
 		localStorage.setItem('lcolor', color);
+		localStorage.setItem('lcade', true);
 	}
 }

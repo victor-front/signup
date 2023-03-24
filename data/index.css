@@ -7,7 +7,7 @@
 body, html{
 	display: flex;
 	flex-direction: column;
-	height: 100vh;
+	height: 100%;
 }
 
 body{
@@ -121,4 +121,12 @@ input#enviar:hover{
 	left: 50%;
 	transform: translate(-50%, -50%);
 	font-size: 4em;
+}
+
+#color{
+	border: none;
+	background-color: #222;
+	border-radius: 5px;
+	padding: 1px 10px 1px 10px;
+	width: 50%;
 }
