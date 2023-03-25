@@ -129,6 +129,7 @@ input#enviar:hover{
 	border-radius: 5px;
 	padding: 1px 10px 1px 10px;
 	width: 50%;
+	cursor: pointer;
 }
 
 #conta{
