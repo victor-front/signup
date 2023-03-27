@@ -110,7 +110,7 @@ function criarBalao(msg, w, h, t, l){
 		document.body.appendChild(balao);
 		
 		balao.style.width = `${w}`;
-		balao.style.height = `{h}`;
+		balao.style.height = `${h}`;
 		balao.style.top = `${t}`;
 		balao.style.left = `${l}`;
 		
