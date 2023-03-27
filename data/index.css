@@ -245,3 +245,40 @@ input#enviar:hover{
 #rodape span a:hover{
 	text-decoration: underline;
 }
+
+#balao{
+	position: absolute;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	background-color: #ddd;
+	border: 3px solid #222;
+	border-radius: 10px 10px 10px 0;
+	transform: translate(0, -50%);
+	overflow: hidden;
+}
+					
+.aparecer{			
+	animation: 300ms aparecer linear;
+}
+					
+.desaparecer{
+	animation: 1s desaparecer ease;
+	opacity: 0%;
+}
+					
+#balao span{
+	font-size: 1.5em;
+	padding: 5px;
+	color: #222;
+}
+					
+@keyframes aparecer{
+	0%{opacity: 0;}
+	100%{opacity: 100%;}
+}
+					
+@keyframes desaparecer{
+	0%{opacity: 100%; transform: rotate(0deg);}
+	100%{opacity: 0%; transform: rotate(80deg); top: 900px;}
+}

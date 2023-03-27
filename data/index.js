@@ -4,27 +4,36 @@ let imagem = document.getElementById('imagem');
 let enviar = document.getElementById('enviar');
 let pod = true; //variável que determina se pode criar o balão de aviso
 
-function comparar(){//se o cadiado for true, quer dizer que a conta já foi criada
-	if(localStorage.getItem('lcade') == 'true'){//se for true, vai imprimir a conta
-		document.body.innerHTML = `
-			<section id="conta">
-				<div id="header" style="background-color: ${localStorage.getItem('lcolor')};"></div>
-				<div id="container">
-					<div id="nick-pfp">
-						<img id="cpfp" src="${localStorage.getItem('lpfp')}"></img>
-						<h1 id="cnick">${localStorage.getItem('lnick')}</h1>
-					</div>
-					<div id="descricao">
-						<p id="cdesc">${localStorage.getItem('ldesc')}</p>
-					</div>
-					<input type="button" id="limpar" onclick="limpar()" value="Deletar Conta">
+const DEFAULT_DESCRIPTION = 'Nada a dizer'; //dados a colocar se não preenchidos
+const DEFAULT_PFP = 'https://static.wikia.nocookie.net/megaman/images/d/dc/Met.jpg/revision/latest?cb=20090301231856';
+const DEFAULT_COLOR = '#555';
+
+const criarConta = (nick, pfp, desc, color) => `
+		<section id="conta">
+			<div id="header" style="background-color: ${color};"></div>
+			<div id="container">
+				<div id="nick-pfp">
+					<img id="cpfp" src="${pfp}"></img>
+					<h1 id="cnick">${nick}</h1>
 				</div>
-			</section>
-			<footer id="rodape"><span>Made by <a href="https://victor-front.github.io/portfolio-victor/"><strong>Victor Front</strong></a></span></footer>
-		`;
-		document.title = localStorage.getItem('lnick');
-		if(localStorage.getItem('ldesc') == false){document.getElementById('cdesc').innerHTML = 'Nada a dizer'};
-		if(localStorage.getItem('lpfp') == false){document.getElementById('cpfp').src = 'https://static.wikia.nocookie.net/megaman/images/d/dc/Met.jpg/revision/latest?cb=20090301231856'};
+				<div id="descricao">
+					<p id="cdesc">${desc}</p>
+				</div>
+				<input type="button" id="limpar" onclick="limpar()" value="Deletar Conta">
+			</div>
+		</section>
+	<footer id="rodape"><span>Made by <a href="https://victor-front.github.io/portfolio-victor/"><strong>Victor Front</strong></a></span></footer>
+`;
+
+function comparar(){//se o cadiado for true, quer dizer que a conta já foi criada
+	if(localStorage.getItem('lcade') == 'true'){//se for true, configurar e imprimir a conta
+		const lnick = localStorage.getItem('lnick');
+		const lpfp = localStorage.getItem('lpfp') || DEFAULT_PFP;
+		const ldesc = localStorage.getItem('ldesc') || DEFAULT_DESCRIPTION;
+		const lcolor = localStorage.getItem('lcolor') || DEFAULT_COLOR;
+		
+		const contaInnerHTML = criarConta(lnick, lpfp, ldesc, lcolor);
+		document.body.innerHTML = contaInnerHTML;
 	}else{//se não for true, então o site prosseguirá normalmente
 		document.getElementById('criar').style.display = 'flex';
 	}
@@ -95,54 +104,16 @@ function criarBalao(msg, w, h, t, l){
 	if(pod == true){//verificar se pode criar o balão ou não
 		pod = false;
 		let balao = document.createElement('div');//criar um balão de aviso
-			balao.setAttribute('id', 'balao');
-			balao.classList.add('aparecer');
-			balao.innerHTML = `
-				<span>${msg}</span>
-				<style>
-					#balao{
-						position: absolute;
-						cursor: pointer;
-						top: ${t};
-						left: ${l};
-						display: flex;
-						align-items: center;
-						background-color: #ddd;
-						border: 3px solid #222;
-						border-radius: 10px 10px 10px 0;
-						transform: translate(0, -50%);
-						overflow: hidden;
-						height: ${h};
-						width: ${w};
-					}
-					
-					.aparecer{
-						animation: 300ms aparecer linear;
-					}
-					
-					.desaparecer{
-						animation: 1s desaparecer ease;
-						opacity: 0%;
-					}
-					
-					#balao span{
-						font-size: 1.5em;
-						padding: 5px;
-						color: #222;
-					}
-					
-					@keyframes aparecer{
-						0%{opacity: 0;}
-						100%{opacity: 100%;}
-					}
-					
-					@keyframes desaparecer{
-						0%{opacity: 100%; transform: rotate(0deg);}
-						100%{opacity: 0%; transform: rotate(80deg); top: 900px;}
-					}
-				</style>
-			`;
+		balao.setAttribute('id', 'balao');
+		balao.classList.add('aparecer');
+		balao.innerHTML = `<span>${msg}</span>`;
 		document.body.appendChild(balao);
+		
+		balao.style.width = `${w}`;
+		balao.style.height = `{h}`;
+		balao.style.top = `${t}`;
+		balao.style.left = `${l}`;
+		
 		setTimeout(()=>{
 			balao.classList.remove('aparecer');
 			balao.classList.add('desaparecer');
