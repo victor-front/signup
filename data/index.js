@@ -89,7 +89,7 @@ function verificar(){//sistema de verificação e validação
 	let color = document.getElementById('color').value;
 	
 	if(nick == false){//se o nick está preenchido ou não
-		criarBalao('Por favor, digite um nick!', '280px','50px', '160px', '800px');
+		criarBalao('Por favor, digite um nick!', '280px','50px', '300px', '800px');
 	}else{
 		localStorage.setItem('lnick', nick);//salvamento dos dados pontuais no navegador
 		localStorage.setItem('ldesc', desc);
