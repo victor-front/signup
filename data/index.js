@@ -5,7 +5,7 @@ let enviar = document.getElementById('enviar');
 let pod = true; //variável que determina se pode criar o balão de aviso
 
 const DEFAULT_DESCRIPTION = 'Nada a dizer'; //dados a colocar se não preenchidos
-const DEFAULT_PFP = 'https://static.wikia.nocookie.net/megaman/images/d/dc/Met.jpg/revision/latest?cb=20090301231856';
+const DEFAULT_PFP = 'data/default-pfp.png';
 const DEFAULT_COLOR = '#555';
 
 const criarConta = (nick, pfp, desc, color) => `
