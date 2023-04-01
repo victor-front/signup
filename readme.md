@@ -10,5 +10,6 @@
 <ul>
 	<li>Notepad++</li>
 	<li>Paletton</li>
+	<li>Paint Dot Net</li>
 	<li>Git e GitHub</li>
 </ul>
