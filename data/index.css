@@ -22,6 +22,8 @@ section{
 section#criar{
 	display: flex;
 	flex-direction: column;
+	width: 100%;
+	max-width: 400px;
 	align-items: center;
 	position: absolute;
 	top: 50%;
@@ -150,7 +152,7 @@ input#enviar:hover{
 	flex-direction: column;
 	background-color: #888;
 	width: 100%;
-	max-width: 500px;
+	max-width: 400px;
 	border-radius: 10px;
 }
 
