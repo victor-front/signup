@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE-edge">
+		<link rel="stylesheet" href="data/index.css">
+		<link rel="shortcut icon" href="data/favicon.ico">
+		<script defer src="data/index.js"></script>
+		<title>Sign Up</title>
+	</head>
+	<body onload="comparar()">
+		<section style="display: none;" id="criar">
+			<h1>Crie sua conta aqui!</h1>
+			<div class="etp">
+				<h2>Foto de perfil</h2>
+				<div id="img-container">
+					<img id="imagem" style="width: 100%; height: 100%; border-radius: 50%; display: none;">
+					<input type="file" id="fileImg" style="display: none;">
+					<span id="icone-001">?</span>
+				</div>
+			</div>
+			<div class="etp">
+				<h2>Digite seu Nick</h2>
+				<input autocomplete="none" class="entr" id="nick" maxlength="15" name="nick" placeholder="Meu nick é...">
+			</div>
+			<div class="etp">
+				<h2>Descrição</h2>
+				<textarea class="entr" maxlength="100" style="font-family: Arial; min-width: 180px; height: 38px; min-height: 38px; max-width: 220px; max-height: 150px;" id="desc" name="desc" placeholder="Minha descrição é..."></textarea>
+			</div>
+			<div class="etp">
+				<h2>Cor de fundo</h2>
+				<input type="color" value="#CC3838" name="color" id="color">
+			</div>
+			<input type="button" value="Enviar" id="enviar">
+		</section>
+		<footer id="rodape"><span>Made by <a href="https://victor-front.github.io/portfolio-victor/" target="_self" rel="external"><strong>Victor Front</strong></a></span></footer>
+	</body>
+</html>
