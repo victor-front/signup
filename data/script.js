@@ -29,11 +29,22 @@ document.addEventListener('keydown', (event)=>{
 });
 
 function filtrar(){
-	const nick = document.querySelector(".nome").value;
-	const desc = document.querySelector(".desc").value;
+	let nick = document.querySelector(".nome").value;
+	let desc = document.querySelector(".desc").value;
+	let pfp = document.querySelector(".pfp").style.backgroundImage;
 	if(!nick){
 		window.alert("Por favor, digite um nick!");
 	}else{
-		window.alert(`Tudo certo! (${nick})`);
+		embalar(nick, desc, pfp);
 	}
+}
+
+function embalar(nick, desc, pfp){
+	if(localStorage.getItem('ldesc')){localStorage.removeItem('ldesc')}
+	if(localStorage.getItem('lpfp')){localStorage.removeItem('lpfp')}
+	localStorage.setItem('lnick', nick);
+	
+	if(desc){localStorage.setItem('ldesc', desc);}
+	if(pfp){localStorage.setItem('lpfp', pfp);}
+	location.reload();
 }
