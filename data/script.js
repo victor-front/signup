@@ -2,6 +2,12 @@ const photo = document.querySelector(".pfp");
 const file = document.querySelector(".file-pfp");
 const i0 = document.querySelector(".i0");
 
+if(localStorage.getItem('lnick')){
+	document.querySelector('.user').style.display = "flex";
+}else{
+	document.querySelector('.sign-up').style.display = 'flex';
+}
+
 photo.addEventListener('click', ()=>{
 	file.click();
 });
