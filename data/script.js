@@ -2,6 +2,7 @@ const photo = document.querySelector(".pfp");
 const file = document.querySelector(".file-pfp");
 const i0 = document.querySelector(".i0");
 const underfinedPFP = 'url("data/underfined.png")';
+const underfinedBC = '#111';
 const underfinedDesc = "Nada a dizer."
 let controle = false;
 
@@ -9,6 +10,7 @@ if(localStorage.getItem('lnick')){
 	document.querySelector('.unome').innerHTML = localStorage.getItem('lnick');
 	document.querySelector('.udesc').innerHTML = verificarDescricao(localStorage.getItem('ldesc'));
 	document.querySelector('.photo').style.backgroundImage = verificarFoto(localStorage.getItem('lpfp'));
+	document.querySelector('.background-user').style.backgroundColor = verificarCor(localStorage.getItem('lcor'));
 	document.querySelector('.user').style.display = "flex";
 	controle = false;
 }else{
@@ -50,20 +52,22 @@ function filtrar(){
 	let nick = document.querySelector(".nome").value;
 	let desc = document.querySelector(".desc").value;
 	let pfp = document.querySelector(".pfp").style.backgroundImage;
+	let bc = document.querySelector(".cor-fun").value;
 	if(!nick){
 		window.alert("Por favor, digite um nick!");
 	}else{
-		embalar(nick, desc, pfp);
+		embalar(nick, desc, pfp, bc);
 	}
 }
 
-function embalar(nick, desc, pfp){
+function embalar(nick, desc, pfp, bc){
 	if(localStorage.getItem('ldesc')){localStorage.removeItem('ldesc')}
 	if(localStorage.getItem('lpfp')){localStorage.removeItem('lpfp')}
 	localStorage.setItem('lnick', nick);
 	
 	if(desc){localStorage.setItem('ldesc', desc);}
 	if(pfp){localStorage.setItem('lpfp', pfp);}
+	if(bc){localStorage.setItem('lcor', bc);}
 	location.reload();
 }
 
@@ -87,5 +91,13 @@ function verificarDescricao(valor){
 		return valor;
 	}else{
 		return underfinedDesc;
+	}
+}
+
+function verificarCor(valor){
+	if(valor){
+		return valor;
+	}else{
+		return underfinedBC;
 	}
 }

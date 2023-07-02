@@ -55,6 +55,17 @@ main{
 	padding: 10px;
 }
 
+.cor-fun{
+	display: flex;
+	padding: 0;
+	width: 100%;
+	height: 80px;
+	border: none;
+	background-color: #444;
+	margin-bottom: 10px;
+	border-radius: 10px;
+}
+
 .pfp{
 	height: 100px;
 	width: 100px;
