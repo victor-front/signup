@@ -6,17 +6,19 @@ const underfinedBC = '#111';
 const underfinedDesc = "Nada a dizer."
 let controle = false;
 
-if(localStorage.getItem('lnick')){
-	document.querySelector('.unome').innerHTML = localStorage.getItem('lnick');
-	document.querySelector('.udesc').innerHTML = verificarDescricao(localStorage.getItem('ldesc'));
-	document.querySelector('.photo').style.backgroundImage = verificarFoto(localStorage.getItem('lpfp'));
-	document.querySelector('.background-user').style.backgroundColor = verificarCor(localStorage.getItem('lcor'));
-	document.querySelector('.user').style.display = "flex";
-	controle = false;
-}else{
-	document.querySelector('.sign-up').style.display = 'flex';
-	controle = true;
-}
+function load(){
+	if(localStorage.getItem('lnick')){
+		document.querySelector('.unome').innerHTML = localStorage.getItem('lnick');
+		document.querySelector('.udesc').innerHTML = verificarDescricao(localStorage.getItem('ldesc'));
+		document.querySelector('.photo').style.backgroundImage = verificarFoto(localStorage.getItem('lpfp'));
+		document.querySelector('.background-user').style.backgroundColor = verificarCor(localStorage.getItem('lcor'));
+		document.querySelector('.user').style.display = "flex";
+		controle = false;
+	}else{
+		document.querySelector('.sign-up').style.display = 'flex';
+		controle = true;
+	}
+}load();
 
 photo.addEventListener('click', ()=>{
 	file.click();
@@ -54,7 +56,7 @@ function filtrar(){
 	let pfp = document.querySelector(".pfp").style.backgroundImage;
 	let bc = document.querySelector(".cor-fun").value;
 	if(!nick){
-		window.alert("Por favor, digite um nick!");
+		window.alert('Por favor, digite um nick!');
 	}else{
 		embalar(nick, desc, pfp, bc);
 	}

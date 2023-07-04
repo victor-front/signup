@@ -12,7 +12,7 @@ body, html{
 }
 
 body{
-	background-color: #262626;
+	background-color: #161616;
 	font-family: Arial, Helvetica, Verdana, sans-serif;
 }
 
@@ -55,6 +55,11 @@ main{
 	padding: 10px;
 }
 
+.cor-text{
+	margin-bottom: 10px;
+	cursor: pointer;
+}
+
 .cor-fun{
 	display: flex;
 	padding: 0;
@@ -64,6 +69,7 @@ main{
 	background-color: #444;
 	margin-bottom: 10px;
 	border-radius: 10px;
+	cursor: pointer;
 }
 
 .pfp{
@@ -157,7 +163,7 @@ label[for="desc"] textarea{
 }
 
 .user{
-	background-color: #1b1b1b;
+	background-color: #2a2a2a;
 	max-width: 400px;
 	color: #ddd;
 	display: flex;
@@ -207,7 +213,7 @@ label[for="desc"] textarea{
 	height: 100px;
 	border-radius: 50%;
 	background-color: #444;
-	outline: 6px solid #1b1b1b;
+	outline: 6px solid #2a2a2a;
 	background-size: cover;
 	background-repeat: no repeat;
 	background-position: center;
