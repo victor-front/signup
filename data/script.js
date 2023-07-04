@@ -58,7 +58,11 @@ function filtrar(){
 	if(!nick){
 		window.alert('Por favor, digite um nick!');
 	}else{
-		embalar(nick, desc, pfp, bc);
+		if(nick.length >= 5){
+			embalar(nick, desc, pfp, bc);
+		}else{
+			window.alert('Seu nick deve conter no mínimo 5 caracteres.');
+		}
 	}
 }
 
